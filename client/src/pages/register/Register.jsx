@@ -30,22 +30,29 @@ export default function Register() {
     <div className="register">
       <span className="registerTitle">Register</span>
       <form className="registerForm" onSubmit={handleSubmit}>
-        <label htmlFor="">Username</label>
+        <label htmlFor="rInput1">Username</label>
         <input
+          id = "rInput1"
+          required
           type="text"
           className="registerInput"
           placeholder="Enter your username..."
           onChange={e=>setUsername(e.target.value)}
         />
-        <label htmlFor="">Email</label>
+        <label htmlFor="rInput2">Email</label>
         <input
-          type="text"
+          id = "rInput2"
+          required
+          type="email"
           className="registerInput"
           placeholder="Enter your email... "
           onChange={e=>setEmail(e.target.value)}
         />
-        <label htmlFor="">Password</label>
+        <label htmlFor="rInput3">Password</label>
         <input
+        id = "rInput3"
+          required
+     
           type="password"
           className="registerInput"
           placeholder="Enter your password..."

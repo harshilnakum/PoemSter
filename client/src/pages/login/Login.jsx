@@ -32,15 +32,19 @@ export default function Login() {
     <div className="login">
       <span className="loginTitle">Login</span>
       <form className="loginForm" onSubmit={handleSubmit}>
-        <label htmlFor="">Username</label>
+        <label htmlFor="lInput1">Username</label>
         <input
+        id = "lInput1"
+        required
           type="text"
           className="loginInput"
           placeholder="Enter your username... "
           ref = {userRef}
         />
-        <label htmlFor="">Password</label>
+        <label htmlFor="lInput2">Password</label>
         <input
+        required
+        id = "lInput2"
           type="password"
           className="loginInput"
           placeholder="Enter your password..."

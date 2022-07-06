@@ -71,6 +71,7 @@
     color: #666;
     font-size: 18px;
     line-height: 25px;
+    align-items: center;
 }
 
 .singlePostDesc::first-letter{
@@ -93,7 +94,7 @@
 .singlePostButton{
     width: 100px;
     border: none;
-    background-color: teal;
+    background-color: rgb(50, 9, 41);
     padding: 5px;
     color: white;
     border-radius: 5px;

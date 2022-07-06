@@ -8,6 +8,7 @@ import Register from "./pages/register/Register";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "./context/Context";
+import FootBar from "./components/footBar/footBar";
 
 
 function App() {
@@ -24,7 +25,9 @@ function App() {
         <Route exact path="/settings" element={<Settings/>}/>
         <Route exact path="/post/:postId" element={<Single/>}/>
 
-      </Routes>
+      </Routes> 
+      <FootBar/>
+      
       
     </Router>
   );

@@ -19,15 +19,16 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebarItem">
-        <span className="sidebarTitle">ABOUT ME</span>
+        <span className="sidebarTitle">ABOUT US</span>
         <img
           className="sidebarImg"
-          src="/images/Placeholder_Person.jpg"
+          src="/images/Poemster.png"
           alt=""
         />
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque
-          aliquam non rerum mollitia dicta nobis
+        <p className="theptag">
+          Poemster is a poetry platform which allows poets to share their work across the world!
+          Poemster allows any type of content without any restriction.
+    
         </p>
       </div>
       <div className="sidebarItem">

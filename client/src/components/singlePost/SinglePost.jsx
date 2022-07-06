@@ -38,14 +38,16 @@ export default function SinglePost() {
     } catch (err) {}
   };
 
-  const handleUpdate = async () =>{
+  const handleUpdate = async () => {
     try {
       await axios.put(`/posts/${post._id}`, {
-        username: user.username, title, desc ,
+        username: user.username,
+        title,
+        desc,
       });
       setUpdateMode(false);
     } catch (err) {}
-  }
+  };
 
   return (
     <div className="singlePost">
@@ -98,10 +100,14 @@ export default function SinglePost() {
             onChange={(e) => setDesc(e.target.value)}
           />
         ) : (
-          <p className="singlePostDesc">{desc}</p>
+          <pre className="singlePostDesc">{desc}</pre>
         )}
-        {updateMode && (<button className="singlePostButton" onClick={handleUpdate}>Update</button>)}
         
+        {updateMode && (
+          <button className="singlePostButton" onClick={handleUpdate}>
+            Update
+          </button>
+        )}
       </div>
     </div>
   );

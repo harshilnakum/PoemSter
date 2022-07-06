@@ -33,7 +33,7 @@
 .registerButton{
     margin-top: 20px;
     cursor: pointer;
-    background-color: teal;
+    background-color: rgb(88, 17, 77);
     border: none;
     color: white;
     border-radius: 10px;
@@ -44,11 +44,11 @@
     position: absolute;
     top: 60px;
     right: 20px;
-    background-color: lightcoral;
+    background-color: rgb(195, 55, 55);
     cursor: pointer;
     border: none;
     padding: 10px;
     color: white;
     border-radius: 10px;
-     
+    margin-top: 20px;
 }

@@ -1,0 +1,60 @@
+.foot {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(50, 9, 41);
+    color: white;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    font-family: "Josefin Sans", sans-serif;
+    justify-content: space-around;
+    z-index: 999;
+  }
+  
+  .footLeft {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  
+  
+  
+  .footIcon {
+    margin-right: 20px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+  }
+  
+  .footImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  
+  .footList {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .footListItem {
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 450;
+    cursor: pointer;
+  }
+  
+  .footSearchIcon {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin-left: 15px;
+  }
+  

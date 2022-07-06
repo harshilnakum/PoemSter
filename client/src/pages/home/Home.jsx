@@ -27,7 +27,7 @@ export default function Home() {
   
     <>
     <Header/>
-    <div className="home">
+    <div className="home" id="homee">
         <Posts posts = {posts}/>
         <Sidebar/>
     </div>
