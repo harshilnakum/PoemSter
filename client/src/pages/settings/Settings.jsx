@@ -43,12 +43,22 @@ export default function Settings() {
       dispatch({ type: "UPDATE_FAILURE" });
     }
   };
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`/users/${user._id}`, {
+        data: { userId: user._id, username: user.username, password: user.password},
+      });
+      dispatch({type: "LOGOUT"});
+      window.location.replace("/");
+    } catch (err) {}
+  };
   return (
     <div className="settings">
       <div className="settingsWrapper">
         <div className="settingsTitle">
           <span className="settingsUpdateTitle">Update Your Account</span>
-          <span className="settingsDeleteTitle">Delete Account</span>
+          <span className="settingsDeleteTitle" onClick={handleDelete}>Delete Account</span>
         </div>
         <form className="settingsForm" onSubmit={handleSubmit}>
           <label>Profile Picture</label>
@@ -61,6 +71,7 @@ export default function Settings() {
               <i className="settingsPPIcon fa-solid fa-user"></i>
             </label>
             <input
+              required
               type="file"
               id="fileInput"
               style={{ display: "none" }}
@@ -69,18 +80,21 @@ export default function Settings() {
           </div>
           <label htmlFor="">Username</label>
           <input
+            required
             type="text"
             placeholder={user.username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <label htmlFor="">Email</label>
           <input
+            required
             type="email"
             placeholder={user.email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <label htmlFor="">Password</label>
           <input
+            required
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />

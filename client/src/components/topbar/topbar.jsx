@@ -9,9 +9,11 @@ import { HashLink } from 'react-router-hash-link';
 export default function TopBar() {
   const {user, dispatch} = useContext(Context);
   const PF = "http://localhost:5000/images/";
+  const altImg = "1657108746385wallpaperflare.com_wallpaper.jpg";
 
   const handleLogout = () =>{
     dispatch({type: "LOGOUT"});
+    
   }
 
   return <div className="top">
@@ -32,7 +34,7 @@ export default function TopBar() {
     </div>
     <div className="topRight">
 
-      {user ? (<Link to="/settings"><img className="topImg" src={PF +user.profilePic} alt="" /></Link>) : 
+      {user ? (<Link to="/settings"><img className="topImg" src={user.profilePic ? PF +user.profilePic : PF +altImg} alt="" /></Link>) : 
       (<ul className="topList">
         <li className="topListItem"><Link className="link" to="/login">LOGIN</Link></li>
       

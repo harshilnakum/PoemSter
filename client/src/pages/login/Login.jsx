@@ -1,7 +1,7 @@
 import "./login.css";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios";
 
@@ -10,6 +10,7 @@ export default function Login() {
   const userRef = useRef();
   const passwordRef = useRef();
   const {user, dispatch, isFetching} = useContext(Context);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
@@ -20,8 +21,12 @@ export default function Login() {
         password: passwordRef.current.value,
       })
       dispatch({type:"LOGIN_SUCCESS", payload: res.data})
+      return;
     }catch(err){
+      setError(true);
       dispatch({type:"LOGIN_FAILURE"})
+      return;
+      
     }
 
   }
@@ -55,6 +60,7 @@ export default function Login() {
         <button className="loginRegisterButton">
           <Link className="link" to="/register">Register</Link>
         </button>
+        {error && <span style={{color:"red", marginTop:"10px"}}>Wrong Credentials !!</span>}
       </form>
     </div>
   );

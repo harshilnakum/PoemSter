@@ -9,7 +9,7 @@ const categoryRoute = require("./routes/categories")
 const multer = require("multer");
 const path = require("path");
 
-
+const PORT = process.env.port || 5000;
 
 
 dotenv.config();
@@ -42,7 +42,10 @@ app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
 
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static("../client/build"))
+}
 
-app.listen("5000", ()=>{
+app.listen(PORT, ()=>{
     console.log("Backend is running");
 });
